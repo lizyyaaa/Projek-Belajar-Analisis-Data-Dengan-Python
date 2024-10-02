@@ -66,7 +66,7 @@ def penyewaan_kelembaban(data_jam):
     bins_kelembaban = [0, 0.2, 0.4, 0.6, 0.8, 1.0]
     label_kelembaban = ['Very Dry', 'Dry', 'Normal', 'Humid', 'Very Humid']
 
-    # Categorizing the 'hum' column into groups
+    # mengakategorikan nilai pada kolom hum 
     data_jam['humidity_category'] = pd.cut(data_jam['hum'], bins=bins_kelembaban, labels=label_kelembaban)
 
     # menghitung jumlah penyewaan berdasarkan kelembaban
@@ -96,10 +96,10 @@ st.sidebar.image("https://e7.pngegg.com/pngimages/227/758/png-clipart-bicycle-sh
                  width=100)
 st.sidebar.markdown("Analisis penyewaan sepeda tahun 2011-2012")
 
-# Adding selection for visualization types
+# menambahkan pilihan tampilan
 tipe_visualisasi = st.sidebar.selectbox("Pilih Data Analisis:", ["Penyewaan per Musim", "Penyewaan Berdasarkan Cuaca", "Penyewaan Berdasarkan Jam", "Penyewaan Berdasarkan Kelembaban"])
 
-# Display selected visualization
+# Display
 if tipe_visualisasi == "Penyewaan per Musim":
     penyewaan_per_musim(data_hari)
 elif tipe_visualisasi == "Penyewaan Berdasarkan Cuaca":
