@@ -13,11 +13,10 @@ def penyewaan_per_musim(data_hari):
     penggunaan_per_musim = data_hari.groupby('season_name')['cnt'].mean()
     fig, ax = plt.subplots(figsize=(8, 8))
     ax.pie(penggunaan_per_musim, labels=penggunaan_per_musim.index, autopct='%1.1f%%', startangle=90, colors=sns.color_palette('Set2'))
-    ax.set_title('Persentase Rata-rata Penyewaan Sepeda per Musim', fontsize=20)
+    ax.set_title('Persentase Rata-rata Penyewaan Sepeda Berdasarkan Musim', fontsize=20)
     ax.axis('equal')
     st.pyplot(fig)
 
-# Fungsi untuk visualisasi penyewaan berdasarkan cuaca
 # Fungsi untuk visualisasi penyewaan berdasarkan cuaca
 def penyewaan_berdasarkan_cuaca(data_jam):
     plt.clf()
@@ -97,10 +96,10 @@ st.sidebar.image("https://e7.pngegg.com/pngimages/227/758/png-clipart-bicycle-sh
 st.sidebar.markdown("Analisis penyewaan sepeda tahun 2011-2012")
 
 # menambahkan pilihan tampilan
-tipe_visualisasi = st.sidebar.selectbox("Pilih Data Analisis:", ["Penyewaan per Musim", "Penyewaan Berdasarkan Cuaca", "Penyewaan Berdasarkan Jam", "Penyewaan Berdasarkan Kelembaban"])
+tipe_visualisasi = st.sidebar.selectbox("Pilih Data Analisis:", ["Penyewaan Berdasarkan Musim", "Penyewaan Berdasarkan Cuaca", "Penyewaan Berdasarkan Jam", "Penyewaan Berdasarkan Kelembaban"])
 
 # Display
-if tipe_visualisasi == "Penyewaan per Musim":
+if tipe_visualisasi == "Penyewaan Berdasarkan Musim":
     penyewaan_per_musim(data_hari)
 elif tipe_visualisasi == "Penyewaan Berdasarkan Cuaca":
     penyewaan_berdasarkan_cuaca(data_jam)
@@ -113,7 +112,7 @@ elif tipe_visualisasi == "Penyewaan Berdasarkan Kelembaban":
 st.header("Insight")
 
 # Insight musim
-if tipe_visualisasi == "Penyewaan per Musim":
+if tipe_visualisasi == "Penyewaan Berdasarkan Musim":
     st.write(""" 
     - Penyewaan Sepeda pada Musim Gugur atau Fall memiliki rata-rata penyewaan tertinggi mencapai 31,4%, sedangkan Spring menunjukkan persentase terendah, yaitu 14,5%
     """)
