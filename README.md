@@ -11,7 +11,7 @@ Menjalankan secara lokal:
 3. Tempatkan dataset yang diperlukan dalam folder yang sama dengan file Python.
 4. Jalankan aplikasi:
     ```bash
-    streamlit run nama_file.py
+    streamlit run Dashboard.py
     ```
 
 
