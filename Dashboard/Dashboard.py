@@ -84,8 +84,8 @@ def penyewaan_kelembaban(data_jam):
     st.pyplot(fig)
 
 # Load dataset 
-data_hari = pd.read_csv("C:/Users/Dian/Downloads/projek dicoding/Dashboard/day.csv")
-data_jam = pd.read_csv("C:/Users/Dian/Downloads/projek dicoding/Dashboard/hour.csv")
+data_hari = pd.read_csv("Dashboard/day.csv")
+data_jam = pd.read_csv("Dashboard/hour.csv")
 
 # Streamlit Layout
 st.title("Dashboard Analisis Penyewaan Sepeda Sistem Capital Bikeshare, Washington D.C., USA")
